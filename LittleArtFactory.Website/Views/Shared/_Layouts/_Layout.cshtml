@@ -20,6 +20,10 @@
 
     <header>
 
+        <div class="header-tools">
+            @Html.Partial( "_LoginPartial" )
+        </div>
+
         <a href="/">
             <img class="logo" src="~/Content/_themes/_default/images/logo-large.png" />
         </a>
@@ -40,7 +44,6 @@
                         <li>@Html.ActionLink( "Shop By Collection", "Collections", "Home" )</li>
                         <li>@Html.ActionLink( "About", "About", "Home" )</li>
                         <li>@Html.ActionLink( "Contact", "Contact", "Home" )</li>
-                        @Html.Partial( "_LoginPartial" )
                     </ul>
                 </div>
             </div>
@@ -56,7 +59,7 @@
 
     <footer>
         <img class="logo small" src="~/Content/_themes/_default/images/logo-large-no-tagline.png" />
-        <p>Copyright &copy; @DateTime.Now.Year Little Art Factory</p>
+        <p>Copyright &copy; @DateTime.Now.Year <strong>A Little Art Factory</strong> • All rights reserved</p>
     </footer>
 
     @Scripts.Render( "~/bundles/jquery" )

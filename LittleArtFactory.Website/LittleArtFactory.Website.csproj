@@ -181,6 +181,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\LittleArtFactory.Database.mdf" />
+    <Content Include="App_Data\LittleArtFactory.Database_log.ldf">
+      <DependentUpon>LittleArtFactory.Database.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\css\bootstrap-components\bootstrap-daterangepicker.css" />
     <Content Include="Content\css\bootstrap-components\bootstrap-select.css" />
     <Content Include="Content\css\bootstrap-components\bootstrap-select.min.css" />
@@ -410,7 +414,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\_themes\_default\emails\" />
     <Folder Include="Content\_uploads\images\" />
   </ItemGroup>

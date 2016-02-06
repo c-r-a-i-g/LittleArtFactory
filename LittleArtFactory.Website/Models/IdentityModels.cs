@@ -1,6 +1,8 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -9,6 +11,20 @@ namespace LittleArtFactory.Website.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        [NotMapped]
+        public string FullName
+        {
+            get
+            {
+                return this.FirstName + " " + this.LastName;
+            }
+        }
+
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -16,12 +32,23 @@ namespace LittleArtFactory.Website.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        /// <summary>
+        /// Gets the current user
+        /// </summary>
+        /// <returns></returns>
+        public static ApplicationUser GetUser()
+        {
+            if( HttpContext.Current.Request.IsAuthenticated == false ) return null;
+            var manager = new UserManager<ApplicationUser>( new UserStore<ApplicationUser>( new ApplicationDbContext() ) );
+            return manager.FindById( HttpContext.Current.User.Identity.GetUserId() );
+        }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public ApplicationDbContext() : base( "LittleArtFactoryDB", throwIfV1Schema: false)
         {
         }
 
