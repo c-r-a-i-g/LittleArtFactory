@@ -1,0 +1,86 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+.nav-tabs
+{
+
+    background-color: @tab-well-background-color;
+    border-bottom: 1px solid @tab-border-color;
+
+    &>li>a
+    {
+
+        box-sizing: content-box;
+        background-color: transparent;
+        color: @tab-well-color;
+        border: solid 1px transparent;
+        border-bottom-color: transparent;
+
+        &:hover, &:focus
+        {
+            background-color: @tab-hover-background-color;
+            color: @tab-hover-color;
+            border: solid 1px @tab-hover-background-color;
+            border-bottom-color: @tab-border-color;
+        }
+    }
+
+    &>li.active>a,&>li.active>a:hover, &>li.active>a:focus
+    {
+        background-color: @tab-active-background-color;
+        color: @tab-active-color;
+        border: solid 1px @tab-border-color;
+        border-bottom-color: transparent;
+    }
+
+    &>li
+    {
+
+        position: relative;
+
+        &.has-error
+        {
+
+            &>a, &.active>a,&.active>a:hover, &.active>a:focus
+            {
+                color: @color-danger;
+                font-weight: 700;
+            }
+
+            /* Uncomment to add an icon to the tab when it has an error */
+            /*&:after
+            {
+                color: @color-danger;
+                font-family: 'Glyphicons Halflings';
+                font-size: 20px;
+                content: '\270f'; // glyphicon-pencil
+                background: @color-danger;
+                color: white;
+                position: absolute;
+                right: -6px;
+                top: -7px;
+                width: 18px;
+                height: 18px;
+                line-height: 18px;
+                text-align: center;        
+                font-size: 10px;
+                display: block;
+                z-index: 10;
+                .border-radius( 18px, 18px, 18px, 18px );
+            }*/
+        }
+
+    }
+
+}
+
+.tab-content
+{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: @tab-active-background-color;
+    padding: @tab-padding;
+    border: solid 1px @tab-border-color;
+    border-top: 0;
+
+}

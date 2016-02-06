@@ -1,0 +1,287 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+#page-header
+{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    border-bottom: none;
+
+    ul.header-items
+    {
+        
+        background-color: @page-header-background;
+        color: @page-header-color;
+        display: block;
+        width: 100%;
+        height: @page-header-height;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        li.header-item
+        {
+
+            display: block;
+            float: left;
+            height: @page-header-height;
+            line-height: @page-header-height - 1px;
+            vertical-align: middle;
+            color: @page-header-color;
+        
+            .transition( all 150ms ease );
+
+            &.menu-button
+            {
+                background: rgba( 255, 255, 255, 0.1 );
+            }
+
+            &.home-button
+            {
+                padding: 0 10px;
+
+                .nav-icon
+                {
+                    position: absolute;
+                    left: 50%;
+                    top: 14px;
+                    margin-left: -20px;
+                }
+
+                h1
+                {
+                    display: inline-block;
+                    margin: 2px 0 0 0;
+                    color: white;
+                    font-size: 20px;
+                    line-height: @page-header-height - 1px;
+
+                    & when ( @display-application-title = false ) 
+                    {
+                        display: none;
+                    }
+
+                }
+
+                a.home-fixed-width
+                {
+                    position: relative;
+                    text-align: center;
+                    display: block;
+                    width: 86px;
+                }
+
+                & when ( @display-home-button = false ) 
+                {
+                    display: none;
+                }
+            }
+
+            &.page-title
+            {
+
+                h1
+                {
+                    pointer-events: none;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: @page-header-height;
+                    vertical-align: middle;
+                    margin: 2px 0 0 0;
+                    padding: 0 20px;
+                }
+
+            }
+
+            &.breadcrumb-menu-wrapper
+            {
+                .btn .caret 
+                {
+                    margin-left: 0;
+                }
+
+                &.disabled
+                {
+                    .btn .caret 
+                    {
+                        color: darken( @page-header-color, 40% );
+                    }
+                }
+            }
+
+            button, button:focus, button:active, button:hover
+            {
+                text-decoration:none;
+                outline: none;
+                color: @page-header-color;
+        
+                &:hover, &:active
+                {
+                    color: lighten( @page-header-color, 10% );
+                }
+
+            }
+
+            &.user-menu-wrapper
+            {
+
+                position: absolute;
+                right: 0;
+                padding: 0 10px;
+
+                .user-image
+                {
+                    width: 28px;
+                    height: 29px;
+                }
+
+            }
+
+            &:not(.no-hover):hover, &:not(.no-hover):active
+            {
+                background-color: @page-header-background-selected;
+                color: lighten( @page-header-color, 7% );
+                border-bottom: solid 1px rgba( 0, 0, 0, 0.3 );
+            }
+
+            .dropdown-menu
+            {
+                
+                background-color: desaturate( lighten( fade( @page-header-background, 100% ), 10% ), 20% );
+                margin-top: 0px;
+                border-radius: 0px;
+                padding: 0px;
+                background-clip: border-box;
+                /*border: solid 1px rgba( 0, 0, 0, 0.3 );*/
+                left: -1px;
+                
+                li:first-child
+                {
+                    //border-top: solid 1px desaturate( lighten( fade( @page-header-background, 100% ), 25% ), 20% );
+                }
+
+                li > a
+                {
+
+                    color: @page-header-color;
+                    padding: 8px 20px;
+                    min-width: 280px;
+
+                    &:hover, &:focus
+                    {
+                        background-color: @page-header-background-selected;
+                        color: lighten( @page-header-color, 10% );
+                    }
+                }
+
+                li.active > a
+                {
+                    background-color: desaturate( lighten( fade( @page-header-background, 100% ), 5% ), 15% );
+                    color: fade( @page-header-color, 50% );
+                }
+
+
+                .divider
+                {
+                    margin: 0;
+                    background-color: rgba( 0, 0, 0, 0.3 );
+                }
+
+
+                &.dropdown-menu-right
+                {
+                    right: -10px;
+                    left: auto;
+                    border-right: 0;
+                }
+            }
+
+        }
+
+    }
+
+    .breadcrumb 
+    {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        border-radius: 0;
+        font-weight: 100;
+
+        > li 
+        {
+
+            display: inline-block;
+
+            + li:before 
+            {
+                color: @breadcrumb-color;
+            }
+
+            > a
+            {
+                color: @breadcrumb-color;
+            }
+
+        }
+
+        > .active 
+        {
+            color: @breadcrumb-active-color;
+        }
+    }
+}
+
+body.sidebar-fixed
+{
+    .page-header .header-items .menu-button
+    {
+        display: none !important;
+    }
+}
+
+
+/* Mobile */
+@media( max-width: 768px )
+{
+    .page-header
+    {
+        ul.header-items
+        {
+        
+            li.header-item
+            {
+
+                &.application
+                {
+
+                    background: rgba( 255, 255, 255, 0.1 );
+
+                    h1
+                    {
+                        font-size: 16px;
+                        font-weight: 400;
+                        padding: 0 5px;
+                    }
+
+                }
+
+                &.page-title
+                {
+
+                    h1
+                    {
+                        font-size: 14px;
+                        padding: 0 5px;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+}

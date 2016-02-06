@@ -1,0 +1,61 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+.dropdown-menu .scroll-content 
+{
+    max-height: 160px;
+    padding: 0;
+    margin: 0px;// 0 1.4em; // override default ul
+    list-style: none;
+}
+
+// Keeps toggle checkboxes hidden until they are replaced by the bootstrap toggle
+input[type=checkbox][data-toggle^=toggle]
+{
+    opacity: 0;
+}
+
+.btn .caret
+{
+    margin-left: 8px;
+}
+
+label
+{
+    font-weight: 600;
+}
+
+.form-control, .bootstrap-select > .btn
+{
+    border-radius: 3px;
+}
+
+.bootstrap-select > .btn
+{
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.form-group 
+{
+    margin-bottom: 12px;
+}
+
+button.btn.btn-block, a.btn.btn-block
+{
+    overflow-x: hidden;
+}
+
+.progress
+{
+    background-color: rgba( 0, 0, 0, 0.05 );
+}
+
+.progress-bar.progress-bar-success
+{
+    background-color: @color-success;
+}
+
+.progress-bar.progress-bar-danger
+{
+    background-color: @color-danger;
+}

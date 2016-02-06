@@ -1,0 +1,32 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+@font-face 
+{
+  font-family: 'augi-icons';
+  src: url('/Content/fonts/AugiFont-Regular.otf') format('opentype');
+}
+
+// Catchall baseclass
+.augi-icon 
+{
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'augi-icons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Individual icons
+.augi-icon-admin               { &:before { content: "s"; } }
+.augi-icon-dashboard           { &:before { content: "À"; } }
+.augi-icon-home                { &:before { content: "E"; } }
+.augi-icon-reports             { &:before { content: "G"; } }
+.augi-icon-gift-orders         { &:before { content: "É"; } }
+.augi-icon-rewards             { &:before { content: "Ë"; } }
+.augi-icon-reward-request      { &:before { content: "Ê"; } }
+

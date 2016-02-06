@@ -1,0 +1,134 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+#modal
+{
+
+    z-index: 10000;
+
+    .modal-dialog
+    {
+
+        width: 768px;
+        left: 50%;
+        margin-left: -384px;
+        z-index: 8001;
+        opacity: 0;
+
+        .transition( opacity 120ms ease );
+
+        &.on
+        {
+            opacity: 1;
+        }
+
+        &.modal-large
+        {
+            width: 1024px;
+            margin-left: -512px;
+        }
+
+        &.modal-medium
+        {
+            width: 768px;
+            margin-left: -384px;
+        }
+
+        &.modal-small
+        {
+            width: 400px;
+            margin-left: -200px;
+        }
+
+        .modal-content
+        {
+            .border-radius( 2px, 2px, 2px, 2px );
+        }
+
+        &.modal-height-medium
+        {
+            height: 400px;
+        }
+
+        &.modal-height-fill
+        {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            height: 100%;
+            overflow: hidden;
+
+            .modal-content
+            {
+                height: 100%;
+
+                .modal-body
+                {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    width: 100%;
+                }
+
+                .modal-footer
+                {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                }
+
+            }
+
+        }
+
+        .slimScrollBar
+        {
+            background-color: @color-primary;
+            box-shadow: none;
+        }
+
+    }
+
+}
+
+.modal-open .modal
+{
+    overflow-y: hidden;
+}
+
+/* Mobile */
+@media( max-width: 768px )
+{
+    #modal
+    {
+
+        .modal-dialog
+        {
+
+            width: 400px;
+            left: 50%;
+            margin-left: -200px;
+
+            &.modal-large, &.modal-medium
+            {
+                left: 0;
+                width: 100%;
+                margin-left: 0;
+
+                .modal-content
+                {
+                    .border-radius( 0, 0, 0, 0 );
+                }
+
+            }
+
+            &.modal-small
+            {
+                width: 400px;
+                margin-left: -200px;
+            }
+
+        }
+
+    }    
+    
+}

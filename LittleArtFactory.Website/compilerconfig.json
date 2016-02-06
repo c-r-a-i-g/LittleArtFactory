@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Content/_themes/_default/app.css",
+    "inputFile": "Content/_themes/_default/app.less"
+  },
+  {
+    "outputFile": "Content/css/bootstrap/bootstrap.css",
+    "inputFile": "Content/css/bootstrap/bootstrap.less"
+  }
+]

@@ -1,0 +1,95 @@
+﻿/* Theme folder */
+@theme-folder: '/content/_themes/_default';
+
+/* Main Colors*/
+@light-color: rgb( 235, 235, 235 );
+@dark-color: rgb( 38, 38, 38 );
+@accent-color: rgb( 0, 170, 229 );
+@content-background: rgb( 246, 246, 246 );
+@ajax-loader-color: #6dfe6a;
+@dashboard-color: #747474;
+
+/* Bootstrap Colors*/
+@color-primary: rgb( 34, 52, 102 );
+@color-danger: rgb( 180, 0, 0 );
+@color-success: rgb(96,183,96);
+
+
+/* Backgrounds */
+@default-background: url( '@{theme-folder}/images/default-background.jpg' );
+@login-background: url( '@{theme-folder}/images/login-background.jpg' );
+
+/* Images */
+@logo: '@{theme-folder}/images/logo-icon.png';
+
+/* Login */
+@login-logo: none;
+@login-width: 332px;
+@login-panel-background: rgba( 255, 255, 255, 0.8 );
+
+/* Sidebar */
+@sidebar-color: @light-color;
+@sidebar-background: darken( fade( @color-primary, 60% ), 8% );
+@sidebar-background-open: @page-header-background;
+@sidebar-slide-menu-background: @light-color;//rgb(67, 72, 80);
+@sidebar-slide-menu-color: @color-primary;
+@sidebar-slide-menu-border-top: solid 10px fade( mix( @sidebar-background, white, 50% ), 100% );
+@sidebar-animation-speed: 200ms;
+@sidebar-width-small: 106px;
+@sidebar-width-large: 240px;
+@sidebar-border-right: 0px;
+
+
+/* Page Header */
+@page-header-height: 66px;
+@display-home-button: false;
+@display-application-title: false;
+@page-header-color: @light-color;
+@page-header-background: rgb( 55, 53, 54 );
+@page-header-background-selected: rgb( 75, 73, 74 );
+@breadcrumb-color: @light-color;
+@breadcrumb-active-color: mix( @accent-color, @light-color, 30% );
+
+/* Layout */
+@page-content-padding: 20px;
+
+/* Panels */
+@panel-border-width: 10px;
+@panel-border-color: rgba( 198, 198, 198, 0.3 );
+@panel-outer-border-color: rgba( 0, 0, 0, 0.2 );
+@panel-border-background-color: fade( @content-background, 30% );
+@panel-header-font-size: 28px;
+@panel-header-padding: 20px 20px 20px 20px;
+@panel-footer-background-color: darken( @content-background, 10% );
+@panel-tool-header-text-size: 19px;
+@panel-tool-text-size: 13px;
+@panel-tool-wrapper-background: rgba( 255, 255, 255, 0.1 );
+@panel-tool-wrapper-border-radius: 2px;
+@panel-tool-wrapper-padding: 10px;
+
+// Tables
+@table-border-color: #dddddd;
+
+// Tabs
+@tab-well-background-color: @content-background;
+@tab-well-color: @color-primary;
+@tab-hover-background-color: darken( @content-background, 4% );
+@tab-hover-color: @color-primary;
+@tab-active-background-color: lighten( @content-background, 4% );
+@tab-active-color: desaturate( @color-primary, 100% );
+@tab-border-color: rgba( 0, 0, 0, 0.2 );
+@tab-padding: 20px;
+
+
+/* Coach Tips */
+@display-coach-tips: false;
+
+
+/* Forms */
+@form-control-background: rgb(245, 245, 245);
+@form-control-border-radius: 2px;
+
+
+/* Reporting */
+@indicator-background: @color-primary;
+@indicator-background-danger: @color-danger;

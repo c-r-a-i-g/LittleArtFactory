@@ -1,0 +1,214 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+.side-panel-tools
+{
+
+    .transition( ~"all 70ms ease" );
+
+    &.panel-tools-animation    
+    {
+        .opacity( 0.8 );
+        .scale( 0.98 );
+    }
+
+}
+
+.panel
+{
+
+    position: relative;
+    padding: 10px;
+    background-color: @panel-border-background-color;
+    border: solid 1px @panel-outer-border-color;
+      
+   
+    /* Puts an inner shadow around the panels content */
+    &:before
+    {
+        pointer-events: none;
+        position: absolute;
+        background: transparent;
+        content:'';
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        .box-shadow( 0 0 5px -1px rgba(0,0,0,.3) );
+    }
+
+    h1
+    {
+        font-size: @panel-header-font-size;
+        font-weight: 600;
+        padding: 0;
+    }
+
+    p
+    {
+        margin-bottom: 15px;
+    }
+
+    .panel-heading
+    {
+        border: 0;
+        border-bottom: solid 1px @panel-border-color;
+        padding: @panel-header-padding;
+        background: @content-background;
+
+        .border-radius( 2px, 0, 0, 2px );
+
+        h1
+        {
+            color: @color-primary;
+            margin: 0;
+        }
+
+    }
+
+    .panel-body
+    {
+        padding-top: 20px;
+        background: @content-background;
+        .border-radius( 2px, 2px, 2px, 2px );
+        border: 0;
+    }
+
+    .panel-footer
+    {
+        background: @content-background;
+        border-top: solid 1px @panel-border-color;
+        .border-radius( 0, 2px, 2px, 0 );
+    }
+
+    &.panel-info
+    {
+
+        background-color: fade( @color-primary, 20% );
+        color: @light-color;
+        
+        .panel-body, .panel-header, .panel-footer
+        {
+            background-color: fade( @color-primary, 80% );
+        }
+
+    }
+
+    &.panel-danger
+    {
+
+        background-color: fade( @color-danger, 20% );
+        color: @light-color;
+
+        .panel-body, .panel-header, .panel-footer
+        {
+            background-color: @color-danger;
+        }
+    }
+
+    /* Text styling within info panels and coach tips */
+    &.panel-info, &.panel-danger, &.coach-tips
+    {
+
+        h2,h3
+        {
+            position: relative;
+            top: -2px;
+            text-shadow: 1px 1px 2px rgba( 0, 0, 0, 0.4 );
+            margin-bottom: 6px;
+        }
+
+
+        h3
+        {
+            font-size: @panel-tool-header-text-size;
+        }
+
+        p
+        {
+            font-size: @panel-tool-text-size;
+            color: fade( @light-color, 80% );
+            margin-bottom: 12px;
+        }
+
+        .tool-wrapper
+        {
+
+            background: @panel-tool-wrapper-background;
+            border-radius: @panel-tool-wrapper-border-radius;
+            padding: @panel-tool-wrapper-padding;
+            overflow: hidden;
+
+            & > label
+            {
+                display: block;
+                position: relative;
+                font-size: @panel-tool-text-size;
+                font-weight: 100;
+                top: -2px;
+            }
+
+        }
+
+        .textbox-with-button
+        {
+            input
+            {
+                border: solid 2px rgba(255,255,255,.35);
+                height: 36px;
+                border-right: 0;
+                box-shadow: none;
+            }
+        }
+
+        .row.row-spacer
+        {
+            margin-bottom: 15px;
+        }
+    }
+
+    &.coach-tips
+    {
+        border: solid 1px fade( @color-primary, 40% );
+        padding: 0;
+        color: @color-primary;
+
+        &:before
+        {
+            box-shadow: none;
+        }
+
+        .panel-body
+        {
+            padding: 25px;
+            .border-radius( 4px, 4px, 4px, 4px );
+        }
+
+        .panel-body, .panel-header, .panel-footer
+        {
+            color: @color-primary;
+            background-color: @panel-border-background-color;
+        }
+
+        h3
+        {
+            color: @color-primary;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: dashed 1px fade( @color-primary, 50% );
+
+        }
+
+        p
+        {
+            color: @color-primary;
+        }
+
+        & when ( @display-coach-tips = false ) 
+        {
+            display: none;
+        }
+
+    }
+
+}

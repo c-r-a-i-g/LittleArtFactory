@@ -1,0 +1,92 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+header
+{
+
+    .logo
+    {
+        margin: 0 auto 30px;
+        padding-top: 50px;
+        display: block;
+    }
+
+    .navbar
+    {
+
+        border-top: solid 1px #EDEDED;
+        border-bottom: solid 1px #E4E4E4;
+        background: #F6F6F6;
+        box-shadow: inset 0 -6px 16px -17px rgba( 0, 0, 0, 0.2 );
+        border-radius: 0;
+        text-transform:uppercase;
+        font-weight: 600;
+
+        .navbar-toggle 
+        {
+
+            position: relative;
+            margin: 0;
+            height: 47px;
+            border: 0;
+            float: left;
+
+            // Bars
+            .icon-bar 
+            {
+                background: @page-header-color;
+                width: @page-header-height / 2;
+            }
+
+        }   
+
+        .navbar-nav 
+        {
+            float: none;
+            margin: 0 auto;
+            display: table;
+            position: relative;
+
+            li
+            {
+
+                a
+                {
+
+                    .transition( all 50ms ease );
+
+                    &:after
+                    {
+                        .transition( all 50ms ease );
+
+                        background: transparent;
+                        content: '';
+                        width: 100%;
+                        height: 4px;
+                        position: absolute;
+                        bottom: -1px;
+                        left: 0;
+                    }
+
+
+                    &:hover, &:focus
+                    {
+
+                        background: rgba( 0, 0, 0, 0.01 );
+                        box-shadow: inset 0 10px 10px -20px rgba( 0, 0, 0, 0.3 );
+
+                        &:after
+                        {
+                            background: #ff006d;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+}
+

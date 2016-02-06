@@ -1,0 +1,237 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+.table
+{
+
+    .hardware-acceleration();
+
+    margin-bottom: 0;
+    table-layout: fixed;
+
+    &.table-ajax
+    {
+        display: none;
+    }
+
+    &.loaded
+    {
+        display: table;
+    }
+
+    th.sorting, th.sorting_asc, th.sorting_desc
+    {
+        cursor: pointer;
+    }
+
+    tr.inactive
+    {
+        background-color: rgba(0, 0, 0, 0.04);
+        color: fade( @dark-color, 50% );
+
+        th > a
+        {
+            opacity: 0.5;
+        }
+    }
+
+    & thead tr > th 
+    {
+        border-bottom: 2px solid #4C4C4C;
+    }
+
+    & tbody > tr > th > a
+    {
+        font-weight: 700;      
+        
+        td.hidden, th.hidden
+        {
+            display: none;
+        }             
+    }
+
+    & tbody > tr.row-danger, & tbody > tr.row-danger > td > a, & tbody > tr.row-danger > th > a
+    {
+        color: @color-danger;
+    }
+
+    & tbody > tr > *
+    {
+        border-top: solid 1px @table-border-color;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;    
+    }
+
+    &.table-alternate
+    {
+        tr:nth-child(odd)
+        {
+            background-color: lighten( @content-background, 1% );
+        }
+        tr:nth-child(even)
+        {
+            background-color: @content-background;
+        }
+    }
+
+    &.table-mini
+    {
+
+        border-top: solid 1px darken( @table-border-color, 10% );
+        border-bottom: solid 1px darken( @table-border-color, 10% );
+        margin-bottom: 30px;
+
+        thead
+        {
+            display: inline-table;
+            width: 100%;
+            padding-right: 4px;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        tbody
+        {
+            tr:first-child > *
+            {
+                border-top: 0 !important;
+            }
+            padding-right: 4px;
+        }
+
+        tr > *:first-child
+        {
+            padding-left: 10px;
+        }
+
+        tr > *:last-child
+        {
+            padding-right: 10px;
+        }
+
+    }
+
+    thead
+    {
+        tr
+        {
+            th, td
+            {
+                border-bottom: solid 1px darken( @table-border-color, 10% );
+                font-weight: 400;
+            }
+        }
+    }
+
+    tbody.scroll-content
+    {
+
+        background-color: rgba(0, 0, 0, 0.02);
+        position: relative;
+        display: block;
+        width: 100%;
+
+        tr
+        {
+            display: table;
+            width: 100%;
+
+            td, th
+            {
+                padding: 7px 5px;
+            }
+        }
+
+        &:before
+        {
+            content: "No Data";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: -1;
+        }
+    }
+
+}
+
+.dataTables_wrapper > div.row:first-child
+{
+    display: none;
+}
+
+.dataTables_info, .dataTables_paginate
+{
+    margin-top: 10px;
+}
+
+.pagination
+{
+
+    margin: 0;
+    float: right;
+
+    .active > a
+    {
+        cursor:pointer !important;
+        background-color: @color-primary;
+        border-color: @color-primary;
+        color: @light-color;
+        border-radius: 1px;
+
+        &:hover,&:focus
+        {
+            background-color: lighten( @color-primary, 10% );
+            border-color: lighten( @color-primary, 10% );
+        }
+
+    }
+}
+
+.dataTables_filter
+{
+    text-align: right;
+}
+
+.table-filter:not(:first-child)
+{
+    margin-top: 15px;
+}
+
+#search-table
+{
+    border: solid 2px rgba(255, 255, 255, 0.33);
+    height: 40px;
+}
+
+.search-input-wrapper
+{
+    position: realtive;
+    width: 100%;
+
+    #clear-search
+    {
+        pointer-events: none;
+        opacity: 0;
+        color: @color-primary;
+        background-color: transparent;
+        position: absolute;
+        right: 30px;
+        bottom: 18px;
+        padding: 2px 4px 0px;
+
+        .border-radius( 2px, 2px, 2px, 2px );
+        .transition( ~"opacity 300ms ease, background-color 120ms ease" );
+        
+        &.on
+        {
+            pointer-events: all;
+            opacity: 1;
+
+            &:hover, &:active
+            {
+                background-color: rgba( 0, 0, 0, 0.08 );
+            }
+        }
+    }
+
+}

@@ -1,0 +1,136 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+.login-outer-wrapper
+{
+
+    padding-top: 100px;
+    .transition( all 700ms cubic-bezier(0.390, 0.575, 0.565, 1.000) );
+
+    &.off
+    {
+        .opacity( 0 );
+        .translate( 0, 15px );
+    }
+
+    &.success
+    {
+        .transition( all 300ms ease );
+        .scale( 0.9 );
+        .opacity( 0 );
+    }
+
+    ul
+    {
+        list-style: disc !important;
+        padding-left: 20px;
+        font-size: 13px;
+
+        li
+        {
+            padding-bottom: 5px;
+        }
+    }
+
+    strong
+    {
+        font-weight: 600;
+    }
+}
+
+.login-wrapper
+{
+
+    text-align: right;
+
+    .checkbox
+    {
+        margin-left: 20px;
+        display: inline;
+        input
+        {
+            top: 2px;
+            margin-right: 10px;
+        }
+    }
+
+    form
+    {
+        display: inline-block;
+        width: @login-width;
+
+        .accept-terms
+        {
+            background: @color-success;
+            line-height: 34px;
+            color: white;
+            .border-radius( 2px, 2px, 2px, 2px );
+
+            input
+            {
+                top: 0;
+            }
+
+            .checkbox.input-validation-error .field-error
+            {
+                max-width: none;
+                .validation-error-icon 
+                {
+                    top: -16px;
+                    left: -29px;
+                }
+
+                .error-message
+                {
+                    top: -7px;
+                    left: -20px;  
+                    height: 34px;              
+                }
+            } 
+        }
+    }
+
+    .panel
+    {
+
+
+        width: @login-width;
+        background: @login-panel-background;
+        text-align: left;
+
+        .box-shadow( 0 0 14px -4px rgba( 0, 0, 0, 0.5 ) );
+
+        .panel-footer
+        {
+            background: transparent;
+        }
+
+    }
+}
+
+/* Tablet */
+@media( max-width: 1024px ) 
+{
+    .login-outer-wrapper
+    {
+        padding-top: 100px;
+    }
+
+    .login-wrapper
+    {
+        text-align: center;
+    }
+
+}
+
+/* Mobile */
+@media( max-width: 768px )
+{
+    .login-outer-wrapper
+    {
+
+        padding-top: 40px;
+    }
+}
+
+

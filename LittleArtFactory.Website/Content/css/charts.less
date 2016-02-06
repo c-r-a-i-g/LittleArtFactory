@@ -1,0 +1,68 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+@import "panels";
+
+.chart
+{
+
+    canvas
+    {
+        //max-height: 203px;
+        display: block;
+    }
+
+    h2
+    {
+        font-size: 16px;
+    }
+
+    .chart-legend
+    {
+
+        padding: 0;
+        margin: 4px 0 12px;
+
+        li
+        {
+            display: inline-block;
+            margin-right: 25px;
+            font-size: 12px;
+
+            span
+            {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                vertical-align: middle;
+                margin-right: 8px;
+                position: relative;
+                top: -2px;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    &.chart-data-list
+    {
+        &:not(:first-child)
+        {
+            margin-top: 15px;
+        }
+    }
+
+}
+
+.chart-100
+{
+    canvas { height: 100px; }
+}
+
+.chart-150
+{
+    canvas { height: 150px; }
+}
+
+.chart-200
+{
+    canvas { height: 200px; }
+}

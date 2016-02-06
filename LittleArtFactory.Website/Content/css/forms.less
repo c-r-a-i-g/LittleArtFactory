@@ -1,0 +1,211 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+.form-control, .bootstrap-select > .btn-default
+{
+    background-color: @form-control-background;
+    .box-shadow( inset 0 1px 1px rgba(255,255,255,.5) );
+    .border-radius( @form-control-border-radius, @form-control-border-radius, @form-control-border-radius, @form-control-border-radius );
+}
+
+.form-control.input-validation-error, .btn.dropdown-toggle.input-validation-error  
+{
+    border-color: @color-danger;
+    outline: 0;
+    .box-shadow( ~"inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255, 0, 0, 0.6)" );
+}
+
+/* Toggles */
+.btn.toggle
+{
+    label
+    {
+        overflow: hidden;
+    }
+}
+
+.form-spacer
+{
+    height: 30px;
+}
+
+.form-spacer-small
+{
+    height: 20px;
+}
+
+form
+{
+    .btn.dropdown-toggle:not(.input-validation-error)
+    {
+
+        &:focus, &:active
+        {
+            border-color: #66afe9 !important;
+            outline: 0 !important;
+            .box-shadow( ~"inset 0 1px 1px rgba(255,255,255,.5),0 0 8px rgba(102,175,233,.6)" );
+        }    
+    }
+
+    h2
+    {
+        color: @color-primary;
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    .panel-heading h2
+    {
+        margin-bottom: 0;
+    }
+
+    .panel-body h2
+    {
+        padding-bottom: 15px;
+    }
+
+    .form-group
+    {
+        position:relative;
+        clear: both;
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    .form-control[disabled], 
+    .form-control[readonly], 
+    fieldset[disabled] .form-control 
+    {
+        position: relative;
+        background-color: #E8E8E8;
+        opacity: 1;
+        color: rgb(171, 171, 171);
+        border-color: #D8D8D8;
+    }
+
+    .field-container
+    {
+        display: block;
+        max-width: 280px;
+    }
+
+    .calendar-wrapper
+    {
+
+        position: relative;
+        max-width: 280px;
+
+        input { cursor: pointer; }
+
+        i.glyphicon
+        {
+            position: absolute;
+            right: 8px;
+            top: 10px;
+            color: rgba( 0, 0, 0, 0.6 );
+            pointer-events: none;        
+        }
+    }
+
+}
+
+.field-validation-error
+{
+    display: none;
+}
+
+.field-error
+{
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .error-message
+    {
+
+        display: block;
+        background: @color-danger;
+        color: white;
+        position: absolute;
+        left: 10px;
+        top: 0px;
+        padding: 0px 5px 3px;
+        font-size: 10px;
+        text-indent: 12px;
+        z-index: 9;
+        opacity: 0;
+        cursor: pointer;
+        pointer-events: none;
+        vertical-align: middle;
+        width: 0;
+        overflow: hidden;
+
+        .border-radius( 2px, 2px, 2px, 2px );
+        .transition( all 300ms ease );
+
+        &.on
+        {
+            opacity: 0.9;
+            pointer-events: all;
+            width: 100%;
+        }
+
+    }
+
+    .validation-error-icon
+    {
+        background: @color-danger;
+        color: white;
+        position: absolute;
+        left: 2px;
+        top: -9px;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;        
+        font-size: 10px;
+        display: block;
+        z-index: 10;
+        cursor: pointer;
+        .border-radius( 18px, 18px, 18px, 18px );
+    }
+
+}
+
+.checkbox.input-validation-error
+{
+
+    .field-error
+    {
+        .error-message
+        {
+            display: block;
+            left: 0px;
+            height: 32px !important;
+            line-height: 32px !important;
+            max-width: 280px;
+        }
+
+        .validation-error-icon
+        {
+            top: -9px;
+            left: -8px;
+        }
+
+    }
+
+}
+
+/* any ancestor has disabled class */
+.disabled
+{
+    pointer-events: none;
+}
+
+
+

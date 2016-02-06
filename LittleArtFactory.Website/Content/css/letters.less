@@ -1,0 +1,144 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+
+@letter-margin-sides: 120px;
+@letter-margin-sides-print: 90px;
+
+.letter
+{
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 1261px;
+    padding: 0 @letter-margin-sides + 40px 20px @letter-margin-sides;
+    font-size: 16px;
+
+    &.letter-editing
+    {
+        .letter-not-editable
+        {
+            display: inline-block;
+            color: #adadad !important;
+        }
+    }
+
+    div[contenteditable="true"]
+    {
+
+        padding: 5px 0;
+        overflow-y: visible;
+
+        &:hover
+        {
+            background-color: #f5f5f5 !important;
+        }
+
+        &:focus
+        {
+            outline: none;
+            background-color: #efefef !important;
+        }
+
+    }
+
+    p
+    {
+        margin: 0 0 20px;
+    }
+
+    section
+    {
+
+        position: relative;
+        width: 100%;
+
+        &.sender-section
+        {
+            padding-bottom: 15px;
+        }
+
+        &.body-section
+        {
+            text-align: justify;
+        }
+
+        &.footer-section
+        {
+            position: absolute;
+            left: @letter-margin-sides;
+            right: @letter-margin-sides + 40px;
+            width: auto;
+            bottom: 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+    }
+
+    .letter-logo
+    {
+        float: left;
+        width: 40%;
+        height: 180px;
+    }
+
+    .letter-signature
+    {
+        width: 50%;
+        height: 66px;
+    }
+
+    .sender-address
+    {
+        float: right;
+        min-height: 180px;
+        width: 50%;
+        text-align: right;
+        font-size: 0.9em;
+    }
+
+    .recipient-name
+    {
+        min-height: 32px;
+        width: 50%;
+        padding-bottom: 5px;
+    }
+
+    .recipient-address
+    {
+        min-height: 63px;
+        width: 50%;
+        margin-bottom: 35px;
+    }
+
+}
+
+// Letter is in print mode
+#pdf-wrapper
+{
+
+    .letter
+    {
+
+        width: 1032px;
+        height: 1491px;
+        padding: 30px @letter-margin-sides-print 0 @letter-margin-sides-print;
+        font-size: 20px;
+
+        .letter-logo
+        {
+            width: 40%;
+            height: auto;
+        }
+
+        .letter-signature
+        {
+            width: auto;
+            height: 66px;
+        }
+
+    }
+
+}

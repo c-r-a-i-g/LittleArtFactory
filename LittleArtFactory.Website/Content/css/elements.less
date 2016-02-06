@@ -1,0 +1,134 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+@import (reference) "../css/bootstrap/variables.less";
+
+#var-color-primary { color: @color-primary; }
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.no-max-width
+{
+    max-width: none;
+}
+
+/* Anchors 
+*/
+a
+{
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+/* Lists
+*/
+ul
+{
+    list-style: none;
+    margin: 0;
+
+    &.bullets
+    {
+        list-style: disc;
+        padding-left: 20px;   
+        padding-bottom: 10px; 
+
+        li
+        {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+/* Headers
+*/
+h1, h2, h3, h4, h5
+{
+    margin-top: 0;
+}
+
+.disabled
+{
+    pointer-events: none;
+}
+
+.remove-padding
+{
+    padding: 0;
+}
+
+.text-padding-bottom
+{
+    padding-bottom: 8px;
+    display: block;
+}
+
+.transparent
+{
+    background: none;
+}
+
+.block
+{
+    display: block;
+}
+
+.text-100
+{
+    font-weight: 100;
+}
+
+.footnote
+{
+    opacity: 0.7;
+    font-size: 12px;
+}
+
+.top5 { margin-top:5px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top20 { margin-top:20px; }
+.top30 { margin-top:30px; }
+
+.top5-xs, .top10-xs, .top15-xs, .top20-xs, .top30-xs { margin-top:0; }
+.top5-sm, .top10-sm, .top15-sm, .top20-sm, .top30-sm { margin-top:0; }
+.top5-md, .top10-md, .top15-md, .top20-md, .top30-md { margin-top:0; }
+
+@media (min-width: @screen-xs) and (max-width: @screen-sm)  // variable from bootstrap/variables.less
+{
+    .top5-xs { margin-top:5px; }
+    .top10-xs { margin-top:10px; }
+    .top15-xs { margin-top:15px; }
+    .top20-xs { margin-top:20px; }
+    .top30-xs { margin-top:30px; }
+}
+
+@media (min-width: @screen-sm) and (max-width: @screen-md)  // variable from bootstrap/variables.less
+{
+    .top5-sm { margin-top:5px; }
+    .top10-sm { margin-top:10px; }
+    .top15-sm { margin-top:15px; }
+    .top20-sm { margin-top:20px; }
+    .top30-sm { margin-top:30px; }
+}
+
+@media (min-width: @screen-md) and (max-width: @screen-lg)  // variable from bootstrap/variables.less
+{
+    .top5-md { margin-top:5px; }
+    .top10-md { margin-top:10px; }
+    .top15-md { margin-top:15px; }
+    .top20-md { margin-top:20px; }
+    .top30-md { margin-top:30px; }
+}
+

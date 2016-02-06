@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleArtFactory.Website", "LittleArtFactory.Website\LittleArtFactory.Website.csproj", "{45DE7E7E-B49A-43AA-A5FC-1820A93EF53F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{5C6B8E6E-4542-424F-97B5-DF6FC318D3CB}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Website", "Website", "{BEA5274E-90C6-4832-9F7C-335CB9BA8433}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{3468D66B-1B29-4669-83BC-322D51942F75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleArtFactory.Framework", "LittleArtFactory.Framework\LittleArtFactory.Framework.csproj", "{64F5110F-ED77-4F9B-BA0C-D6F4A9F47FB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4408F10B-71D1-4A7C-9612-C50618BE6453}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45DE7E7E-B49A-43AA-A5FC-1820A93EF53F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DE7E7E-B49A-43AA-A5FC-1820A93EF53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DE7E7E-B49A-43AA-A5FC-1820A93EF53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DE7E7E-B49A-43AA-A5FC-1820A93EF53F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64F5110F-ED77-4F9B-BA0C-D6F4A9F47FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64F5110F-ED77-4F9B-BA0C-D6F4A9F47FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64F5110F-ED77-4F9B-BA0C-D6F4A9F47FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64F5110F-ED77-4F9B-BA0C-D6F4A9F47FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45DE7E7E-B49A-43AA-A5FC-1820A93EF53F} = {BEA5274E-90C6-4832-9F7C-335CB9BA8433}
+		{64F5110F-ED77-4F9B-BA0C-D6F4A9F47FB6} = {3468D66B-1B29-4669-83BC-322D51942F75}
+	EndGlobalSection
+EndGlobal

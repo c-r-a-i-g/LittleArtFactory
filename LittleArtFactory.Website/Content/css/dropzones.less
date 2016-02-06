@@ -1,0 +1,32 @@
+﻿@import (reference) "_mixins.less";
+@import (reference) "../_themes/_default/variables.less";
+
+.dropzone
+{
+    cursor: pointer;
+    border-radius: 10px;
+    background: #E0E0E0;
+    border: 2px dashed #A9A9A9;
+    padding: 10px;
+    text-align: center;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    .dz-image { display: none; }
+    .dz-details { display: none; }
+    .dz-progress { display: none; }
+    .dz-error-message { display: none; }
+    .dz-success-mark { display: none; }
+    .dz-error-mark { display: none; }
+    .dz-remove { display: none; }
+
+    .dz-message
+    {
+        position: relative;
+        display: block;
+        color: @color-primary;
+    }
+    
+}

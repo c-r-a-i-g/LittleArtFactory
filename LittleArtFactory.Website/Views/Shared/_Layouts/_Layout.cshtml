@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artbeat</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700' rel='stylesheet' type='text/css'>
+    @Styles.Render( "~/bundles/css" )
+    <link rel="stylesheet" type="text/css" href="~/content/_themes/_default/app.min.css">
+    @Scripts.Render( "~/bundles/modernizr" )
+    @Scripts.Render( "~/bundles/jquery" )
+    @Scripts.Render( "~/bundles/jqueryval" )
+    @Scripts.Render( "~/bundles/bootstrap" )
+    @Scripts.Render( "~/bundles/scripts" )
+    <script>var _page = null;</script>
+</head>
+
+<body>
+
+    <header>
+
+        <a href="/">
+            <img class="logo" src="~/Content/_themes/_default/images/logo-large.png" />
+        </a>
+
+        <nav class="navbar" role="navigation">
+            <div class="container body-content">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink( "Home", "Index", "Home" )</li>
+                        <li>@Html.ActionLink( "New", "New", "Home" )</li>
+                        <li>@Html.ActionLink( "Shop By Collection", "Collections", "Home" )</li>
+                        <li>@Html.ActionLink( "About", "About", "Home" )</li>
+                        <li>@Html.ActionLink( "Contact", "Contact", "Home" )</li>
+                        @Html.Partial( "_LoginPartial" )
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container body-content">
+
+        @RenderBody()
+
+    </div>
+
+    <footer>
+        <img class="logo small" src="~/Content/_themes/_default/images/logo-large-no-tagline.png" />
+        <p>Copyright &copy; @DateTime.Now.Year Little Art Factory</p>
+    </footer>
+
+    @Scripts.Render( "~/bundles/jquery" )
+    @Scripts.Render( "~/bundles/bootstrap" )
+    @RenderSection( "scripts", required: false )
+
+</body>
+</html>
