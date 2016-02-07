@@ -357,6 +357,34 @@ body .body-content:before,
 body .body-content:after {
   display: none;
 }
+.section-title {
+  position: relative;
+  text-align: center;
+  padding: 15px 0;
+}
+.section-title:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #e2e2e2;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.section-title h2 {
+  display: inline-block;
+  background: white;
+  text-transform: uppercase;
+  padding: 8px 23px;
+  margin: 0;
+  position: relative;
+  font-weight: 700;
+  font-size: 14px;
+  color: #444;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  z-index: 1;
+}
 .slimScrollRail {
   margin: 0 0 0 0;
 }
@@ -365,8 +393,8 @@ body .body-content:after {
   cursor: pointer;
 }
 header .logo {
-  margin: 0 auto 30px;
-  padding-top: 50px;
+  margin: 0 auto 50px;
+  padding-top: 60px;
   display: block;
 }
 header .header-tools {
@@ -396,6 +424,7 @@ header .navbar {
   border-radius: 0;
   text-transform: uppercase;
   font-weight: 600;
+  margin-bottom: 0;
 }
 header .navbar .navbar-toggle {
   position: relative;
@@ -416,6 +445,9 @@ header .navbar .navbar-nav {
 }
 header .navbar .navbar-nav li a {
   color: #2DC5D3;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
   -webkit-transition: all 50ms ease;
   -moz-transition: all 50ms ease;
   -ms-transition: all 50ms ease;
@@ -444,7 +476,7 @@ header .navbar .navbar-nav li a:focus {
 }
 header .navbar .navbar-nav li a:hover:after,
 header .navbar .navbar-nav li a:focus:after {
-  background: #ff006d;
+  background: #ee0e97;
 }
 footer {
   position: absolute;
@@ -453,8 +485,8 @@ footer {
   height: 150px;
   text-align: center;
   padding-top: 20px;
-  background-color: #717171;
-  box-shadow: inset 0 5px 5px -3px rgba(0, 0, 0, 0.5);
+  background-color: #3C3C3C;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.3) inset;
   color: white;
   font-weight: 200;
 }

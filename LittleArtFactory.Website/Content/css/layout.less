@@ -32,7 +32,41 @@ body
     }
 }
 
+.section-title
+{
 
+    position: relative;
+    text-align: center;
+    padding: 15px 0;
+
+
+    &:after
+    {
+        content:'';
+        width: 100%;
+        height: 1px;
+        background-color: #e2e2e2;
+        position: absolute;
+        top: 50%;
+        left: 0;
+    }
+
+    h2
+    {
+        display: inline-block;
+        background: white;
+        text-transform: uppercase;
+        padding: 8px 23px;
+        margin: 0;
+        position: relative;
+        font-weight: 700;
+        font-size: 14px;
+        color: #444;
+        font-family: "Montserrat",sans-serif;
+        letter-spacing: 2px;
+        z-index: 1;
+    }
+}
 
 .slimScrollRail
 {

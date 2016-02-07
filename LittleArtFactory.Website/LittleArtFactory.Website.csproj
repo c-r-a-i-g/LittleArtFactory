@@ -169,7 +169,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -391,7 +390,7 @@
     <Content Include="Views\Shared\_Layouts\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Homepage.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -419,6 +418,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LittleArtFactory.Database\LittleArtFactory.Database.csproj">
+      <Project>{21f00a82-b663-46be-a77f-f197cd0bbe09}</Project>
+      <Name>LittleArtFactory.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LittleArtFactory.Framework\LittleArtFactory.Framework.csproj">
+      <Project>{64f5110f-ed77-4f9b-ba0c-d6f4a9f47fb6}</Project>
+      <Name>LittleArtFactory.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

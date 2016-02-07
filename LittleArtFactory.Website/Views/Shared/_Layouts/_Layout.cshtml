@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artbeat</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     @Styles.Render( "~/bundles/css" )
     <link rel="stylesheet" type="text/css" href="~/content/_themes/_default/app.min.css">
     @Scripts.Render( "~/bundles/modernizr" )
@@ -52,14 +53,12 @@
     </header>
 
     <div class="container body-content">
-
         @RenderBody()
-
     </div>
 
     <footer>
         <img class="logo small" src="~/Content/_themes/_default/images/logo-large-no-tagline.png" />
-        <p>Copyright &copy; @DateTime.Now.Year <strong>A Little Art Factory</strong> • All rights reserved</p>
+        <p>Copyright &copy; @DateTime.Now.Year <strong>The Little Art Factory</strong> • All rights reserved</p>
     </footer>
 
     @Scripts.Render( "~/bundles/jquery" )
