@@ -47,6 +47,7 @@ namespace LittleArtFactory.Database
         /* -----------------------------------------------
          * Pictures
          */
+        public DbSet<Collection> Collections { get; set; }
         public DbSet<Picture> Pictures { get; set; }
 
         #endregion

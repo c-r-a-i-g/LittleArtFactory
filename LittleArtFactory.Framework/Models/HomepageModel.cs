@@ -8,7 +8,7 @@ using LittleArtFactory.Database.Entities;
 
 namespace LittleArtFactory.Framework.Models
 {
-    public class CollectionModel
+    public class HomepageModel
     {
 
         // --------------------------------------------------------------------------------------------------------
@@ -21,10 +21,12 @@ namespace LittleArtFactory.Framework.Models
 
         #region Constructor and Intialisation
 
-        public CollectionModel( string title, List<Picture> pictures )
+        public HomepageModel()
         {
-            this.Title = title;
-            this.Pictures = pictures;
+
+            var db = new LittleArtFactoryDB();
+            this.Collections = db.Collections.Where( x => x.IsActive && x.Pictures.Count() > 0 ).ToList();
+
         }
 
         #endregion
@@ -51,8 +53,7 @@ namespace LittleArtFactory.Framework.Models
 
         #region Properties
 
-        public string Title { get; set; } = "";
-        public List<Picture> Pictures { get; set; } = new List<Picture>();
+        public List<Collection> Collections { get; set; } = new List<Collection>();
 
         #endregion
 

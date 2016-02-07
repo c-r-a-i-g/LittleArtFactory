@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 namespace LittleArtFactory.Database.Entities
 {
 
-    [Table( "Picture" )]
-    public class Picture
+    [Table( "Collection" )]
+    public class Collection
     {
 
         // --------------------------------------------------------------------------------------------------------
@@ -22,11 +22,6 @@ namespace LittleArtFactory.Database.Entities
         // --------------------------------------------------------------------------------------------------------
 
         #region Constructor and Intialisation
-
-        public Picture()
-        {
-            this.PictureId = Guid.NewGuid();
-        }
 
         #endregion
 
@@ -54,15 +49,10 @@ namespace LittleArtFactory.Database.Entities
 
         [Key]
         [Required]
-        public Guid PictureId { get; set; }
+        public Guid CollectionId { get; set; }
 
         [Required, MaxLength( 200 )]
         public string Title { get; set; }
-
-        [Required]
-        [ForeignKey( "Collection" )]
-        public Guid CollectionId { get; set; }
-        public virtual Collection Collection { get; set; }
 
         [Required, MaxLength( 255 )]
         public string Path { get; set; }
@@ -73,6 +63,8 @@ namespace LittleArtFactory.Database.Entities
         [Required]
         [DatabaseGenerated( DatabaseGeneratedOption.Computed )]
         public DateTime DateCreated { get; set; }
+
+        public virtual ICollection<Picture> Pictures { get; set; }
 
         #endregion
 

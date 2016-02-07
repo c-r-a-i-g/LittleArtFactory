@@ -25,6 +25,8 @@
             @Html.Partial( "_LoginPartial" )
         </div>
 
+        <img class="factory" src="~/Content/_themes/_default/images/factory.png" />
+
         <a href="/">
             <img class="logo" src="~/Content/_themes/_default/images/logo-large.png" />
         </a>
@@ -52,7 +54,7 @@
 
     </header>
 
-    <div class="container body-content">
+    <div class="container body-content padding-for-footer">
         @RenderBody()
     </div>
 
@@ -65,5 +67,16 @@
     @Scripts.Render( "~/bundles/bootstrap" )
     @RenderSection( "scripts", required: false )
 
+    <script>
+
+        $(function () {
+            $(window).on('resize', function () {
+                $('.square-by-width').each(function () {
+                    $(this).height($(this).width());
+                });
+            }).resize();
+        });
+
+    </script>
 </body>
 </html>

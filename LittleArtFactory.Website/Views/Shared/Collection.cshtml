@@ -1,0 +1,21 @@
+﻿@using LittleArtFactory.Database.Entities;
+
+@model Collection
+
+@{ 
+    var count = Model.Pictures.Count;
+    var countLabel = ( count == 1 ? "1 item" : string.Format( "{0} items", count ) );
+}
+
+<div class="collection col-xs-12 col-sm-6 col-md-3 square-by-width">
+
+    <a href="/collections/@Model.Title" class="image" title="" style="background-image:url('/content/_uploads/images/@Model.Path')">
+    </a>
+
+    <div class="info">
+        <a href="/collections/@Model.Title" title="Browse our @Model.Title collection">
+            <h3>@Model.Title</h3><p>@countLabel</p>
+        </a>
+    </div>
+
+</div>

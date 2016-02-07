@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Collection.cs" />
     <Compile Include="Entities\Picture.cs" />
     <Compile Include="LittleArtFactoryDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -234,6 +234,7 @@
     </None>
     <Content Include="Content\css\footer.less" />
     <Content Include="Content\css\header.less" />
+    <Content Include="Content\css\pictures.less" />
     <None Include="Content\scripts\components\_references.js" />
     <Content Include="Content\scripts\extensions\gift-rewards.jquery-validate.extensions.js" />
     <Content Include="Content\scripts\gift-rewards.ajax.js" />
@@ -262,6 +263,8 @@
     <Content Include="Content\_themes\_default\app.min.css">
       <DependentUpon>app.css</DependentUpon>
     </Content>
+    <Content Include="Content\_themes\_default\images\factory.png" />
+    <Content Include="Content\_themes\_default\images\gallery.jpg" />
     <Content Include="Content\_themes\_default\images\logo-large-no-tagline.png" />
     <Content Include="Content\_themes\_default\images\logo-large.png" />
     <Content Include="favicon.ico" />
@@ -411,6 +414,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Collection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\_themes\_default\emails\" />

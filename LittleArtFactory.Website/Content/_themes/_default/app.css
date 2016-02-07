@@ -353,6 +353,9 @@ body.locked {
 body .body-content {
   position: relative;
 }
+body .body-content.padding-for-footer {
+  padding-bottom: 170px;
+}
 body .body-content:before,
 body .body-content:after {
   display: none;
@@ -392,9 +395,15 @@ body .body-content:after {
   box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
+header .factory {
+  margin: 0 auto 20px;
+  padding-top: 20px;
+  display: block;
+  opacity: 0.4;
+  width: 240px;
+}
 header .logo {
   margin: 0 auto 50px;
-  padding-top: 60px;
   display: block;
 }
 header .header-tools {
@@ -497,6 +506,75 @@ footer .logo.small {
   width: 220px;
   margin-bottom: 10px;
 }
+.image {
+  display: block;
+  background: #e3e3e3;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-topleft: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.collection {
+  display: table;
+  padding: 5px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.collection .image {
+  display: table-cell;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+}
+.collection .info {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+}
+.collection .info a {
+  display: block;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
+  position: relative;
+  z-index: 1;
+}
+.collection .info a h3 {
+  text-transform: uppercase;
+  margin: 0;
+  color: #1C7FB3;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: normal;
+}
+.collection .info a p {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #444;
+}
 #var-color-primary {
   color: #223466;
 }
@@ -519,7 +597,13 @@ textarea {
 */
 a {
   text-decoration: none !important;
-  outline: none !important;
+  color: #444;
+  outline: 0 none !important;
+  -webkit-transition: color 0.5s ease-in 0ms;
+  -moz-transition: color 0.5s ease-in 0ms;
+  -ms-transition: color 0.5s ease-in 0ms;
+  -o-transition: color 0.5s ease-in 0ms;
+  transition: color 0.5s ease-in 0ms;
 }
 /* Lists
 */
